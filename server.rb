@@ -10,6 +10,11 @@ get '/' do
   haml :index, format: :html5
 end
 
+post '/create' do
+  start_process(params[:n])
+  redirect '/'
+end
+
 def heroku
   @heroku ||= Heroku::API.new(
     api_key: ENV['HEROKU_API_KEY']
@@ -22,4 +27,13 @@ def get_processes
   heroku.get_ps(ENV['APP_NAME']).body.group_by do |process|
     process['process'].split('.').first
   end
+end
+
+# Starts a counting task on Heroku
+def start_process(n)
+  heroku.post_ps(
+    ENV['APP_NAME'],
+    "rake count_to[#{n}]",
+    attach: false
+  )
 end

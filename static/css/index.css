@@ -14,6 +14,19 @@ h2 {
   margin-bottom: 10px;
 }
 
+.new_process {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.new_process input[type=text] {
+  font-size: 24px;
+  width: 50px;
+}
+.new_process input[type=submit] {
+  display: inline-block;
+  font-size: 24px;
+}
+
 .process_list {
   margin-bottom: 25px;
 }

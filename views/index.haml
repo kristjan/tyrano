@@ -5,6 +5,14 @@
 
 %body
   %h1 Tyrano
+
+  .new_process
+    %form{action: '/create', method: 'POST'}
+      %p
+        %label{for: 'n'} Count to
+        %input{type: :text, id: 'n', name: 'n', autofocus: true}
+        %input{type: :submit, value: 'Start'}
+
   - %w[web run].each do |type|
     .process_list
       %h2= type
