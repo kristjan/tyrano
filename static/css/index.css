@@ -22,7 +22,7 @@ h2 {
   font-size: 24px;
   width: 50px;
 }
-.new_process input[type=submit] {
+input[type=submit] {
   display: inline-block;
   font-size: 24px;
 }

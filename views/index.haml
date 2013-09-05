@@ -25,5 +25,9 @@
             %li
               - PROCESS_FIELDS.each do |field|
                 %span{class: field}= process[field]
+              %span.kill
+                %form{action: '/kill', method: 'POST'}
+                  %input{type: :hidden, name: 'ps', value: process['process']}
+                  %input{type: :submit, value: 'Kill'}
       - else
         .no_processes No Processes

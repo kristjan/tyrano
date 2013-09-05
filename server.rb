@@ -15,6 +15,11 @@ post '/create' do
   redirect '/'
 end
 
+post '/kill' do
+  kill_process(params[:ps])
+  redirect '/'
+end
+
 def heroku
   @heroku ||= Heroku::API.new(
     api_key: ENV['HEROKU_API_KEY']
@@ -35,5 +40,13 @@ def start_process(n)
     ENV['APP_NAME'],
     "rake count_to[#{n}]",
     attach: false
+  )
+end
+
+# Kills a named Heroku process
+def kill_process(ps)
+  heroku.post_ps_stop(
+    ENV['APP_NAME'],
+    ps: ps
   )
 end
