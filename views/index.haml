@@ -1,2 +1,21 @@
 %title Tyrano
-%h1 Tyrano
+%head
+  %link{rel: 'stylesheet', type: 'text/css', href: '/css/reset.css'}
+  %link{rel: 'stylesheet', type: 'text/css', href: '/css/index.css'}
+
+%body
+  %h1 Tyrano
+  - %w[web run].each do |type|
+    .process_list
+      %h2= type
+      - if @processes[type]
+        %ul
+          %li
+            - PROCESS_FIELDS.each do |field|
+              %span{class: "header #{field}"}= field
+          - @processes[type].each do |process|
+            %li
+              - PROCESS_FIELDS.each do |field|
+                %span{class: field}= process[field]
+      - else
+        .no_processes No Processes
