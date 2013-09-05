@@ -1,0 +1,56 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  padding: 25px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.new_process {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.new_process input[type=text] {
+  font-size: 24px;
+  width: 50px;
+}
+input[type=submit] {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.process_list {
+  margin-bottom: 25px;
+}
+
+ul {
+  margin-left: 10px;
+}
+li span {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+li .header {
+  text-transform: uppercase;
+}
+li .process {
+  width: 100px;
+}
+li .pretty_state {
+  width: 150px;
+}
+li .command {
+  width: 300px;
+}
+
+.no_processes {
+  margin: 10px;
+}
