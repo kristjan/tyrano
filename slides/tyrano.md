@@ -38,7 +38,7 @@
 $ heroku run rake do:something
 ```
 
-- Dynos runs its task, then exits
+- Dyno runs its task, then exits
 - Known process ID
 - Don't restart on deploy
 
